@@ -14,34 +14,34 @@
                         <div class="text-center">
                             <h1 class="h4 text-gray-900 mb-4">Créer un compte</h1>
                         </div>
-                        <form class="user">
+                        <form class="user" method="post" action="">
                             <div class="form-group row">
                                 <div class="col-sm-6 mb-3 mb-sm-0">
                                     <input type="text" class="form-control form-control-user" id="exampleFirstName"
-                                        placeholder="Nom">
+                                        placeholder="Nom" name="name">
                                 </div>
                                 <div class="col-sm-6">
                                     <input type="text" class="form-control form-control-user" id="exampleLastName"
-                                        placeholder="Prénom">
+                                        placeholder="Prénom" name="prenom">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <input type="email" class="form-control form-control-user" id="exampleInputEmail"
-                                    placeholder="Email">
+                                    placeholder="Email" name="email">
                             </div>
                             <div class="form-group row">
                                 <div class="col-sm-6 mb-3 mb-sm-0">
                                     <input type="password" class="form-control form-control-user"
-                                        id="exampleInputPassword" placeholder="Mot de passe">
+                                        id="exampleInputPassword" placeholder="Mot de passe" name="password">
                                 </div>
                                 <div class="col-sm-6">
                                     <input type="password" class="form-control form-control-user"
-                                        id="exampleRepeatPassword" placeholder="Repeter Mot de passe">
+                                        id="exampleRepeatPassword" placeholder="Repeter Mot de passe" name="repeatPassword">
                                 </div>
                             </div>
-                            <a href="login.html" class="btn btn-primary btn-user btn-block">
+                            <button class="btn btn-primary btn-user btn-block">
                                 Créer un compte
-                            </a>
+                            </button>
                             <hr>
                             
                         </form>
@@ -50,7 +50,7 @@
                             <a class="small" href="forgot-password.html">Mot de passe oublié?</a>
                         </div>
                         <div class="text-center">
-                            <a class="small" href="login.html">Vous avez un compte? Login!</a>
+                            <a class="small" href="{{ route("auth.show-login") }}">Vous avez un compte? Login!</a>
                         </div>
                     </div>
                 </div>
