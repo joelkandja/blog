@@ -21,14 +21,14 @@ use Illuminate\Support\Facades\Route;
 Route::group(['as' => 'auth.'], function () {
     Route::get('admin/register', [RegisterController::class, 'show'])->name('show-register');
     Route::get('admin/login', [LoginController::class, 'show'])->name('show-login');
-   
+    Route::post('admin/auth/register', [RegisterController::class, 'register'])->name('register');
+    Route::post('admin/auth/login', [LoginController::class, 'login'])->name('login');
+    Route::get('admin/auth/logout', [LoginController::class, 'logout'])->name('logout');
 });
 
-Route::group(['as'=>'admin.'], function(){
-    Route::get('admin/dashboard/',[DashboardController::class, "show"])->name("show-dashboard");
+Route::group(['as' => 'admin.'], function () {
+    Route::get('admin/dashboard/', [DashboardController::class, "show"])->name("show-dashboard");
 });
 
 Route::get('/', [HomeController::class, "index"])->name("index");
 Route::get('detail-post/{post}', [PostContoller::class, "detailPost"])->name("detailPost");
-
-
